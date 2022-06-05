@@ -1,0 +1,343 @@
+@import url(https://fonts.googleapis.com/css?family=Signika:300,regular,600,700&display=swap);
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "signika";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "signika";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 73.125rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+.header {
+  font-family: "signika";
+  height: 100%;
+  background-color: rgba(215, 195, 145, 0.879);
+}
+.header__container {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+.header__container:hover span {
+  animation: bounce 0.6s;
+}
+.header__title {
+  font-size: 5em;
+  font-weight: bold;
+}
+@media (max-width: 29.99875em) {
+  .header__title {
+    font-size: 3.3em;
+  }
+}
+.header__title h1 span:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.header__title span:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.header__title span:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.header__title span:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.header__title span:nth-child(6) {
+  animation-delay: 0.25s;
+}
+.header__title span:nth-child(7) {
+  animation-delay: 0.3s;
+}
+.header__title span:nth-child(8) {
+  animation-delay: 0.35s;
+}
+.header__title span:nth-child(9) {
+  animation-delay: 0.4s;
+}
+.header__title span:nth-child(10) {
+  animation-delay: 0.45s;
+}
+.header__title span:nth-child(11) {
+  animation-delay: 0.5s;
+}
+.header span {
+  display: inline-block;
+  animation: float 0.2s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: none;
+  }
+  33% {
+    transform: traslateY(-1px) rotate(-2deg);
+  }
+  66% {
+    transform: translateY(1px) rotate(2deg);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3deg) scale(1.1);
+  }
+}
+.header span:nth-child(4n) {
+  color: #ac2f2f;
+  text-shadow: 1px 1px #c91d1d, 2px 2px #a63f3f, 3px 3px #a63f3f, 4px 4px #c91d1d;
+}
+.header span:nth-child(4n-1) {
+  color: #fcfcfc;
+  text-shadow: 1px 1px #797777, 2px 2px #7f7676, 3px 3px white px 4px #656765;
+}
+.header span:nth-child(4n-2) {
+  color: #0213f7;
+  text-shadow: 1px 1px #0a1394, 2px 2px #3958f3, 3px 3px #5a6fe2, 4px 4px #363da1;
+}
+.header span:nth-child(4n-3) {
+  color: #f90101;
+  text-shadow: 1px 1px #b94646, 2px 2px #b94646, 3px 3px #d62424, 4px 4px #e87d7d;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/
+.calc {
+  margin: 60px auto;
+  width: 300px;
+  height: 100%;
+  background: #0a0a0a;
+  color: white;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 4px 4px 4px #4f4f4f4f;
+}
+.calc__screen {
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+  height: auto;
+  display: flex;
+  border-radius: 15px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background-color: #f0f0f0;
+  color: black;
+}
+.calc__screen p {
+  text-align: right;
+  font-size: 3.5rem;
+  margin: 0;
+  padding: 10px;
+  width: 16.25rem;
+}
+.buttons {
+  display: grid;
+  grid-template-areas: "ac ac percent division" "seven eigth nine multi" "four five six minus" "one two three plus" "zero dot equal equal";
+  grid-gap: 7px;
+  justify-items: center;
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  background-color: #6b6b6b;
+  border-radius: 20%;
+  box-shadow: 2px 3px 2px rgba(119, 119, 119, 0.5);
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button.equal {
+  grid-area: equal;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 2.5rem;
+}
+
+.button.ac {
+  grid-area: ac;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 2.5rem;
+}
+
+.button:hover {
+  filter: brightness(120%);
+}
+
+.button:active {
+  box-shadow: 1px 1px 2px rgba(119, 119, 119, 0.5);
+  filter: brightness(80%);
+}
+
+.button.bg-red {
+  background: rgba(248, 31, 31, 0.904);
+}
